@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>信息记录</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="content-img">
+    <img [src]="url" *ngIf="url">
+  </div>
+  <div>
+    <ion-list lines="full" class="ion-no-margin ion-no-padding">
+      <ion-item>
+        <ion-label position="stacked">长 <span class='tip'> ( m ) </span>
+          <ion-text color="danger">*</ion-text>
+        </ion-label>
+        <ion-input required type="number" [(ngModel)]="long"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">宽 <span class='tip'> ( m ) </span>
+          <ion-text color="danger">*</ion-text>
+        </ion-label>
+        <ion-input required type="number" [(ngModel)]="wide"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">高 <span class='tip'> ( m ) </span>
+          <ion-text color="danger">*</ion-text>
+        </ion-label>
+        <ion-input required type="number" [(ngModel)]="high"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">重量 <span class='tip'> ( kg ) </span>
+          <ion-text color="danger">*</ion-text>
+        </ion-label>
+        <ion-input required type="number" [(ngModel)]="weight"></ion-input>
+      </ion-item>
+    </ion-list>
+    <div class="ion-padding">
+      <ion-button [disabled]="!long || !wide || !high || !weight" expand="block" (click)="submit()"
+        class="ion-no-margin">提交</ion-button>
+    </div>
+  </div>
+</ion-content>
